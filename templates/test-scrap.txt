@@ -1,0 +1,31 @@
+ <select class="col-sm-8 form-control myselect" style="width:500px;" name="type">
+	                                                <option value="Taxi">Taxi</option>
+	                                                <option value="Bus">Bus</option>
+                                                    <option value="Train">Train</option>
+                                                    <option value="Hotel">Hotel</option>
+                                                    <option value="Flight">Flight</option>
+                                                    <option value="Meal">Meal</option>
+
+	                                            </select>
+
+
+
+                                                {% for operator in operators %}
+                                                 <select class="col-sm-8 form-control myselect" name="type" style="width:500px;">
+	                                                <option value="Taxi" {% if operator.type == 'Taxi' %} selected {%endif%}>Taxi2222</option>
+	                                                <option value="Bus" {% if operator.type == 'Bus' %} selected {%endif%}>Bus</option>
+                                                    <option value="Train" {% if operator.type == 'Train' %} selected {%endif%}>Train</option>
+                                                    <option value="Hotel" {% if operator.type == 'Hotel' %} selected {%endif%}>Hotel</option>
+                                                    <option value="Flight" {% if operator.type == 'Flight' %} selected {%endif%}>Flight</option>
+                                                    <option value="Meal" {% if operator.type == 'Meal' %} selected {%endif%}>Meal</option>
+	                                            </select>
+                                            {% endfor %}
+
+
+
+  <!--select2-->
+    <link href="{% static 'assets/plugins/select2/css/select2.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/plugins/select2/css/select2-bootstrap.min.css' %}" rel="stylesheet" type="text/css" />                                          
+
+
+

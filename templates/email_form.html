@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="send-email" enctype="multipart/form-data">
+            {% csrf_token %}
+        Enter email to : <input type="text" name="email_to"></br></br></br>
+        message : <textarea name="email_body">
+        </textarea></br></br>
+        attachment : <input type="file" name="documents" id="documents"> </br>
+
+        <input type="submit" value="send">
+
+    </form>
+
+</body>
+</html>

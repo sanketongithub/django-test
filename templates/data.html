@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>gender</th>
+                
+                <th>birth date</th>
+                <th>hire date</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>gender</th>
+                
+                <th>birth date</th>
+                <th>hire date</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+    {{employee.first_name}}
+
+
+<script>
+
+    $(document).ready(function() {
+        var oTable = $('#example').dataTable({
+            // ...
+            "processing": true,
+            "serverSide": true,
+            "ajax": 'view_testing',
+            dataType: 'json',
+            success: function(data) {
+          if (data) {
+            alert(data);
+          }
+        }
+
+        });
+        // ...
+    });
+
+
+</script>
+   
+</body>
+</html>

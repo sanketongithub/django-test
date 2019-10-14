@@ -1,0 +1,79 @@
+{% load static %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+        
+    </head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+        <center>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+                <tr>
+                    <td align="center" valign="top" id="bodyCell">
+                        <table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+                            {{headers}}    
+                            
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
+                                        <tr>
+                                            <td valign="top" class="headerContent">
+                                                <a href="www.company-domain.com">
+                                                       
+                                                    <img src="media/{{headers.img}}" style="max-width:600px;padding:20px" id="headerImage" alt="{$company_name}" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                                
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
+                                        <tr>
+                                            <td valign="top" class="bodyContent">
+
+                                                <!-- footer section -->
+
+                                                <B>THIS IS EMAIL BOY</B>
+
+                                                <p>
+                                                    {{ message }}
+                                                </p>
+
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter">
+                                       {% for footer in footers %}
+                                        <tr>
+                                            <td valign="top" class="footerContent">
+                                                &nbsp;<a href="{$company_domain}">visit our website</a>
+                                                <span class="hide-mobile"> | </span>
+                                                <a href="{$whmcs_url}">{{footer.contact_no}}</a>
+                                                <span class="hide-mobile"> | </span>
+                                                <a href="{$whmcs_url}submitticket.php">get support</a>&nbsp;<br />
+                                                Copyright &copy; {{footer.company_name}}, All rights reserved.
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
+
